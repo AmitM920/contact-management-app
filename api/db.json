@@ -1,0 +1,39 @@
+{
+  "user": [
+    {
+      "id": "1",
+      "first_name": "firstfasdf",
+      "last_name": "last",
+      "username": "username",
+      "password": "123",
+      "city": "city",
+      "state": "state",
+      "zip": "zip"
+    },
+    {
+      "id": "d6ce",
+      "first_name": "12",
+      "last_name": "12123",
+      "username": "12",
+      "password": "123",
+      "city": "12",
+      "state": "12",
+      "zip": "12"
+    },
+    {
+      "id": "9ac6",
+      "username": "fasd",
+      "password": "fasdf"
+    },
+    {
+      "id": "cc26",
+      "username": "new regis",
+      "password": "its pass"
+    },
+    {
+      "id": "d731",
+      "username": "cool",
+      "password": "cool"
+    }
+  ]
+}

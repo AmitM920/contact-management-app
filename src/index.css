@@ -1,0 +1,53 @@
+.btn {
+    height: 50px;
+}
+
+#button-link {
+    transform: translateY(-8.2px);
+}
+
+#login-form {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+    height: 100vh;
+    align-items: center;
+}
+
+#action-bt {
+    height: 30px;
+}
+
+.useRef {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: rgb(3, 41, 28);
+    text-align: center;
+    color: gray;
+}
+
+.state-p {
+    padding: 0;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    display: inline-block;
+    height: 30px;
+}
+
+.unique-btn {
+    height: 40px;
+    margin: 0.1%;
+    font-size: 2px;
+}
+
+.input-focus {
+    height: 35px;
+    width: 120%;
+    font-size: 10px;
+}
+.card{margin-top:20px}
+.form-control {
+    transition: none;
+    min-width: 500px;
+}
