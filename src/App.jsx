@@ -24,7 +24,7 @@ function App() {
   const login = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get("http://localhost:4000/user");
+      const response = await axios.get("https://contact-management-server-b78r.onrender.com/user");
       const user = response.data.find((user) => (
         user.username === userAddress && user.password === pass
       ));

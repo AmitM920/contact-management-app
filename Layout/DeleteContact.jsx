@@ -8,7 +8,7 @@ function DeleteContact() {
   const [userdel, setUserdel] = useState([]);
   useEffect(() => {
     axios
-      .delete(`http://localhost:4000/user/${id}`)
+      .delete(`https://contact-management-server-b78r.onrender.com/user/${id}`)
       .then((res) => {
         setUserdel(res.data);
       })

@@ -6,7 +6,7 @@ function ContactView() {
   const [user, setUser] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:4000/user")
+      .get("https://contact-management-server-b78r.onrender.com/user")
       .then((res) => {
         setUser(res.data);
       })

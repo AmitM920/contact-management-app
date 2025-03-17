@@ -11,7 +11,7 @@ function AddContact() {
     zip: "",
   });
   const insert = () => {
-    axios.post("http://localhost:4000/user", info);
+    axios.post("https://contact-management-server-b78r.onrender.com/user", info);
   };
   return (
     <>
