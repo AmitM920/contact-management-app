@@ -4,7 +4,8 @@ import { Link, NavLink } from "react-router-dom";
 function Header() {
   const logout = () => {
     localStorage.clear();
-    window.location.reload();
+    // window.location.reload();
+    window.location.replace("/");
   };
   return (
     <>
@@ -40,7 +41,7 @@ function Header() {
                 </Link>
               </li>
 
-              <li  className="nav-item">
+              <li className="nav-item">
                 <Link className="nav-link" to="/add">
                   Add Contact
                 </Link>
