@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function DeleteContact() {
   const { id } = useParams();
@@ -16,9 +16,9 @@ function DeleteContact() {
         console.log(err);
       });
   }, []);
-
+  const Navigate = useNavigate();
   useParams();
-  return <div>Contact has been Deleted</div>;
+  return Navigate("/view");
 }
 
 export default DeleteContact;

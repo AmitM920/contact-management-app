@@ -6,17 +6,16 @@ function Registration() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-        // Fetch existing users
-        const response = await axios.get("https://contact-management-server-b78r.onrender.com/user");
-        const userExists = response.data.some((u) => u.username === userAddress);
-    
-        if (userExists) {
-          alert("User already exists! Try another.");
-          return;
-        } 
+      // Fetch existing users
+      const response = await axios.get("http://localhost:4000/user");
+      const userExists = response.data.some((u) => u.username === userAddress);
 
+      if (userExists) {
+        alert("User already exists! Try another.");
+        return;
+      }
 
-      await axios.post("https://contact-management-server-b78r.onrender.com/user", {
+      await axios.post("http://localhost:4000/user", {
         username: userAddress,
         password: pass,
       });
@@ -30,8 +29,8 @@ function Registration() {
   };
   return (
     <>
-      <div className="card">
-        <div className="card-body">
+      <div class="card">
+        <div class="card-body-register">
           <form onSubmit={handleRegister}>
             <div className="form-group">
               <label htmlFor="exampleInputEmail1">Email address</label>
@@ -49,7 +48,7 @@ function Registration() {
               </small>
             </div>
             <div className="form-group">
-              <label htmlFor="exampleInputPassword1">Password</label>
+              <label htmlFor="exampleInputPassword1">Set Password</label>
               <input
                 type="password"
                 className="form-control"
@@ -59,17 +58,8 @@ function Registration() {
                 placeholder="Password"
               />
             </div>
-            <div className="form-check">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="exampleCheck1"
-              />
-              <label className="form-check-label" htmlFor="exampleCheck1">
-                Check me out
-              </label>
-            </div>
-            <button type="submit" className="btn btn-primary">
+
+            <button type="submit" className="btn btn-dark reg-btn">
               Submit
             </button>
           </form>
