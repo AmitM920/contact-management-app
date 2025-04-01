@@ -7,7 +7,9 @@ function Registration() {
     e.preventDefault();
     try {
       // Fetch existing users
-      const response = await axios.get("http://localhost:4000/user");
+      const response = await axios.get(
+        "https://contact-management-server-b78r.onrender.com/user"
+      );
       const userExists = response.data.some((u) => u.username === userAddress);
 
       if (userExists) {
@@ -15,10 +17,13 @@ function Registration() {
         return;
       }
 
-      await axios.post("http://localhost:4000/user", {
-        username: userAddress,
-        password: pass,
-      });
+      await axios.post(
+        "https://contact-management-server-b78r.onrender.com/user",
+        {
+          username: userAddress,
+          password: pass,
+        }
+      );
       alert("User Register Successfully!");
       setUserAddress("");
       setPass("");
