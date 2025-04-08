@@ -16,7 +16,7 @@ function UpdateContact() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/user/${id}`)
+      .get(`https://contact-management-server-b78r.onrender.com/user/${id}`)
       .then((res) => {
         setUser(res.data);
       })
@@ -24,7 +24,10 @@ function UpdateContact() {
   }, []);
   const updater = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:4000/user/${id}`, user);
+    axios.put(
+      `https://contact-management-server-b78r.onrender.com/user/${id}`,
+      user
+    );
     nav("/view");
   };
 

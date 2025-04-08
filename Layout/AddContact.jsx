@@ -10,12 +10,16 @@ function AddContact() {
     state: "",
     zip: "",
   });
-  const insert = () => {
-    axios.post("https://contact-management-server-b78r.onrender.com/user", info);
+  const insert = (e) => {
+    e.preventDefault(); // prevent form reload
+    axios
+      .post("https://contact-management-server-b78r.onrender.com/user", info)
+      .then((res) => console.log("Data submitted:", res.data))
+      .catch((err) => console.error("Submission error:", err));
   };
   return (
     <>
-      <form class="needs-validation" novalidate>
+      <form class="needs-validation" onSubmit={insert} noValidate>
         <div class="form-row">
           <div class="col-md-4 mb-3">
             <label for="validationCustom01">First name</label>
@@ -25,7 +29,7 @@ function AddContact() {
               id="validationCustom01"
               placeholder="First name"
               value={info.first_name}
-              onChange={(e)=>setInfo({...info,first_name:e.target.value})}
+              onChange={(e) => setInfo({ ...info, first_name: e.target.value })}
               required
             />
             <div class="valid-feedback">Looks good!</div>
@@ -38,7 +42,7 @@ function AddContact() {
               id="validationCustom02"
               placeholder="Last name"
               value={info.last_name}
-              onChange={(e)=>setInfo({...info,last_name:e.target.value})}
+              onChange={(e) => setInfo({ ...info, last_name: e.target.value })}
               required
             />
             <div class="valid-feedback">Looks good!</div>
@@ -57,7 +61,7 @@ function AddContact() {
                 id="validationCustomUsername"
                 placeholder="Username"
                 value={info.username}
-                onChange={(e)=>setInfo({...info,username:e.target.value})}
+                onChange={(e) => setInfo({ ...info, username: e.target.value })}
                 aria-describedby="inputGroupPrepend"
                 required
               />
@@ -74,7 +78,7 @@ function AddContact() {
               id="validationCustom03"
               placeholder="City"
               value={info.city}
-              onChange={(e)=>setInfo({...info,city:e.target.value})}
+              onChange={(e) => setInfo({ ...info, city: e.target.value })}
               required
             />
             <div class="invalid-feedback">Please provide a valid city.</div>
@@ -87,7 +91,7 @@ function AddContact() {
               id="validationCustom04"
               placeholder="State"
               value={info.state}
-              onChange={(e)=>setInfo({...info,state:e.target.value})}
+              onChange={(e) => setInfo({ ...info, state: e.target.value })}
               required
             />
             <div class="invalid-feedback">Please provide a valid state.</div>
@@ -100,7 +104,7 @@ function AddContact() {
               id="validationCustom05"
               placeholder="Zip"
               value={info.zip}
-              onChange={(e)=>setInfo({...info,zip:e.target.value})}
+              onChange={(e) => setInfo({ ...info, zip: e.target.value })}
               required
             />
             <div class="invalid-feedback">Please provide a valid zip.</div>
@@ -123,7 +127,7 @@ function AddContact() {
             </div>
           </div>
         </div>
-        <button class="btn btn-primary" type="submit" onClick={insert}>
+        <button class="btn btn-primary" type="submit">
           Submit form
         </button>
       </form>

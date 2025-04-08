@@ -22,49 +22,60 @@ const WelcomePage = ({
   return (
     <div className="container" id="login-form">
       <h3>🐼Welcome To Contact App</h3>
-      <div class="card">
-      <div class="card-body">
-      <form onSubmit={login}>
-        <div
-          className="form-group"
-          style={{ display: Div ? "block" : "none", transition: "all 0.5s" }}
-        >
-          <label htmlFor="exampleInputEmail1">Email address</label>
-          <input
-            type="text"
-            className="form-control"
-            value={userAddress}
-            onChange={(e) => setUserAddress(e.target.value)}
-            id="exampleInputEmail1"
-            placeholder="Enter email"
-          />
-          <small id="emailHelp" className="form-text text-muted">
-            We'll never share your email with anyone else.
-          </small>
-        </div>
-        <div
-          className="form-group"
-          style={{ display: Div ? "block" : "none", transition: "all 0.5s" }}
-        >
-          <label htmlFor="exampleInputPassword1">Password</label>
-          <input
-            type="password"
-            className="form-control"
-            value={pass}
-            onChange={(e) => setPass(e.target.value)}
-            id="exampleInputPassword1"
-            placeholder="Password"
-          />
-        </div>
+      <div className="card">
+        <div className="card-body">
+          <form onSubmit={login}>
+            <div
+              className="form-group"
+              style={{
+                display: Div ? "block" : "none",
+                transition: "all 0.5s",
+              }}
+            >
+              <label htmlFor="exampleInputEmail1">Email address</label>
+              <input
+                type="text"
+                className="form-control"
+                value={userAddress}
+                onChange={(e) => setUserAddress(e.target.value)}
+                id="exampleInputEmail1"
+                placeholder="Enter email"
+              />
+              <small id="emailHelp" className="form-text text-muted">
+                We'll never share your email with anyone else.
+              </small>
+            </div>
+            <div
+              className="form-group"
+              style={{
+                display: Div ? "block" : "none",
+                transition: "all 0.5s",
+              }}
+            >
+              <label htmlFor="exampleInputPassword1">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                value={pass}
+                onChange={(e) => setPass(e.target.value)}
+                id="exampleInputPassword1"
+                placeholder="Password"
+              />
+            </div>
 
-        <hr />
-        <button type="submit" className="btn btn-dark" id="btn_login">
-         {Div?"Hide Login Form":"Login"}
-        </button>
-        
-        <button type="button" className="btn btn-dark" onClick={toggleRegistration} style={{margin:"2px"}}>
-        {showRegistration ? "Hide Registration Form" : "Register"}
-          {/* <div
+            <hr />
+            <button type="submit" className="btn btn-dark" id="btn_login">
+              {Div ? "Hide Login Form" : "Login"}
+            </button>
+
+            <button
+              type="button"
+              className="btn btn-dark"
+              onClick={toggleRegistration}
+              style={{ margin: "2px" }}
+            >
+              {showRegistration ? "Hide Registration Form" : "Register"}
+              {/* <div
           style={{
             display: showFirstDiv ? "none" : "block",
             transition: "all 0.5s",
@@ -77,14 +88,14 @@ const WelcomePage = ({
               </Route>
             </Routes>
           </div> */}
-        </button>
-      
+            </button>
+
             <hr className="bottom-hr" />
-      </form>
+          </form>
+        </div>
       </div>
-      </div>
-       {/* Conditionally render the Registration component */}
-       {showRegistration && (
+      {/* Conditionally render the Registration component */}
+      {showRegistration && (
         <div>
           <Registration />
         </div>

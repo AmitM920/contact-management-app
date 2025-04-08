@@ -135,7 +135,7 @@
 
 // export default App;
 // App.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { Routes, useNavigate } from "react-router-dom";
@@ -150,6 +150,14 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
   const [Div, setDiv] = useState(false);
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem("loggedIn");
+    if (loggedIn === "true") {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
   const login = async (e) => {
     e.preventDefault();
     try {
@@ -161,12 +169,14 @@ function App() {
       );
       if (user) {
         setIsLoggedIn(true);
+        localStorage.setItem("loggedIn", "true");
         setDiv((prev) => !prev);
         setUserAddress("");
         setPass("");
         navigate("/"); // Redirect to the home/dashboard route after login
       } else {
         // alert("Invalid credentials, try again!");
+        localStorage.removeItem("loggedIn");
         setDiv((prev) => !prev);
       }
     } catch (error) {
